@@ -13,12 +13,14 @@ async function main() {
 
   const [
     stakedAmount,
+    stakeDuration,
     validators,
     blsPublicKeys,
     minimumNumValidators,
     maximumNumValidators,
   ] = await Promise.all([
     stakingContract.stakedAmount(),
+    stakingContract.stakeDuration(),
     stakingContract.validators(),
     stakingContract.validatorBLSPublicKeys(),
     stakingContract.minimumNumValidators(),
@@ -26,6 +28,7 @@ async function main() {
   ]);
 
   console.log(`Total staked amount: ${stakedAmount.toString()}`);
+  console.log(`Stake Duration (days): ${stakeDuration.toString()}`);
   console.log("Minimum number of validators", minimumNumValidators.toNumber());
   console.log("Maximum number of validators", maximumNumValidators.toNumber());
   console.log("Current validators list", validators);
