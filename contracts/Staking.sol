@@ -69,7 +69,7 @@ contract Staking {
         return _stakedAmount;
     }
     
-    function stakDuration() public view returns (uint256) {
+    function stakeDuration() public view returns (uint256) {
         return stakeDuration;
     }
 
