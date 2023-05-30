@@ -126,6 +126,7 @@ contract Staking {
     function _stake() private {
         _stakedAmount += msg.value;
         _addressToStakedAmount[msg.sender] += msg.value;
+        _addressToStakeTime[msg.sender] = block.timestamp;
 
         if (_canBecomeValidator(msg.sender)) {
             _appendToValidatorSet(msg.sender);
