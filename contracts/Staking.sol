@@ -140,6 +140,7 @@ contract Staking {
 
         _addressToStakedAmount[msg.sender] = 0;
         _stakedAmount -= amount;
+        _addressToStakeTime[msg.sender] = 0;
 
         if (_isValidator(msg.sender)) {
             _deleteFromValidators(msg.sender);
