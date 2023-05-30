@@ -68,6 +68,10 @@ contract Staking {
     function stakedAmount() public view returns (uint256) {
         return _stakedAmount;
     }
+    
+    function stakDuration() public view returns (uint256) {
+        return stakeDuration;
+    }
 
     function validators() public view returns (address[] memory) {
         return _validators;
